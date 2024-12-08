@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+
+</head>
+<body>
+    <h1>Contact Page</h1>
+    <div id="userinfo"> </div>
+	
+	    <script>
+
+            let name;
+            let birthYear;
+            const currentYear = new Date().getFullYear();
+
+
+            while (true) {
+                name = prompt("enter your name");
+                if (name && isNaN(name)) { break; }
+				else { alert("Invalid input, Please enter a valid name."); }
+            }
+
+  
+            while (true) {
+                birthYear = prompt("enter your birthyear (must be less than 2010)");
+                if (!isNaN(birthYear) && birthYear < 2010) { break; } 
+				else { alert("Invalid input, Please enter a valid birth year (must be less than 2010).");}
+            }
+
+
+            const age = currentYear - birthYear;
+            document.getElementById("userinfo").innerHTML = "<u><b>name: </b></u>" + name + "<br>" + "<u><b>birthyear:</b></u> " + birthYear + "<br>" +  "<u><b>age:</b></u> " + age + "<br>";
+			
+
+    </script>
+</body>
+</html>
