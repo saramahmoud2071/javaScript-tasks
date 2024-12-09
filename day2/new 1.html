@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 1</title>
+    
+</head>
+<body>
+
+	<script>
+
+		let namee = /^[A-Za-z]+$/ig;
+        let phonenum = /^[0-9]{8}$/;
+		let mobilenum = /^(010|011|012)[0-9]{8}$/;
+		let email = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.com$/;
+
+
+		let inputname;
+		let inputphone;
+		let inputmobile;
+		let inputemail;
+		
+
+		
+		while(true){
+			inputname = prompt("enter your name");		
+			if (  ! inputname.match(namee) ) { alert("Invalid input, Please enter a valid name.");}
+			else {  break; }
+		
+		}
+		
+		while(true){
+			inputphone = prompt("enter your phone number");
+			
+			if (  ! inputphone.match(phonenum) ) { alert("Invalid input, Please enter a valid phone number.");}
+			else {  break; }
+		
+		}
+		
+		while(true){
+			inputmobile = prompt("enter your mobile number");
+			
+			if (  ! inputmobile.match(mobilenum) ) { alert("Invalid input, Please enter a valid mobile number.");}
+			else {  break; }
+		
+		}
+		
+		
+		while(true){
+			inputemail = prompt("enter your email");
+			
+			if (  ! inputemail.match(email) ) { alert("Invalid input, Please enter a valid email.");}
+			else {  break; }
+		
+		}
+		
+		console.log( "welcome dear guest "  + inputname);
+		console.log("your telephone number is "+ inputphone );
+		console.log( "your mobile nimber is "+inputmobile);
+		console.log("your email address is "+ inputemail);
+		
+		
+
+    </script>
+    
+</body>
+</html>

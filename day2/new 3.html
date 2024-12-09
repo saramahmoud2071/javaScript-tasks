@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 3</title>
+    
+</head>
+<body>
+	<h1> Sorting </h1>
+	<hr>
+	<div id="demo"></div>
+
+
+	<script>
+	
+		let numbers = [];
+		for (let i = 1; i <= 5; i++) {
+			let num = parseFloat(prompt(`enter number ${i}`));
+			numbers.push(num);
+		}
+			
+		
+		document.getElementById("demo").innerHTML = "you have entered values of "+ numbers+"<br>"+
+			"your values after being sorted ascending "+ numbers.sort((a,b) => a-b) +"<br>"+
+			"your values after being sorted descending "+ numbers.sort((a,b) => b-a);
+
+    </script>
+    
+</body>
+</html>

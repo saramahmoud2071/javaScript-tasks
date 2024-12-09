@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 2</title>
+    
+</head>
+<body>
+
+
+	<script>
+		function getlargestword(str) {
+
+			let words = str.split(" ");
+			let largestword = words[0];
+			
+			for(i in words){
+				if(words[i].length> largestword.length){largestword=words[i];}
+			}
+			
+			return largestword;
+		}
+		
+
+		let input = "this is a javascript string demo";
+		console.log(getlargestword(input)); // Output: javascript
+
+    </script>
+    
+</body>
+</html>
