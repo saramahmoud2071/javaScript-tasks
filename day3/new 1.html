@@ -24,7 +24,7 @@
 		//creat add task button
 		let createdbutton2 = document.createElement("button");
 		createdbutton2.setAttribute('type', 'submit');
-        createdbutton2.textContent = 'add';
+        	createdbutton2.textContent = 'add';
 		createdbutton2.setAttribute("style","display:inline");
 		createddiv1.appendChild(createdbutton2);
 		
@@ -36,21 +36,21 @@
 		let count = 0;
 		function createtaskdiv(tasktext){
 			taskp = document.createElement('p');
-            taskp.setAttribute('style', 'border:3px solid green;display:inline; width: 200px; block-size: 25px;');
+            		taskp.setAttribute('style', 'border:3px solid green;display:inline; width: 200px; block-size: 25px;');
 			taskp.innerHTML = tasktext;
 		
 			
 			donebutton = document.createElement('button');
-            donebutton.setAttribute('type', 'submit');
+            		donebutton.setAttribute('type', 'submit');
 			donebutton.setAttribute("id",`don${count}`);
-            donebutton.textContent = 'done';
+           		donebutton.textContent = 'done';
 			donebutton.setAttribute("style","display:inline");
 		
 		
 			deletebutton = document.createElement('button');
-            deletebutton.setAttribute('type', 'submit');
+            		deletebutton.setAttribute('type', 'submit');
 			deletebutton.setAttribute("id",`del${count}`);
-            deletebutton.textContent = 'delete';
+            		deletebutton.textContent = 'delete';
 			deletebutton.setAttribute("style","display:inline");
 		
 		
