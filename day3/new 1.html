@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list page</title>
+    
+</head>
+<body>
+
+	
+	<script>
+		
+		let createddiv1 = document.createElement("div");
+		createddiv1.setAttribute("style","background-color:#F5F5DC;padding:50px;display:flex;justify-content:space-evenly");
+		document.body.appendChild(createddiv1)
+		
+		//create input text
+		let createdinput = document.createElement("form");
+		createdinput.setAttribute("style","display:inline");
+		createdinput.innerHTML ='<input type="text" id="task" placeholder="add your task here" value="">';
+		createddiv1.appendChild(createdinput);
+		
+		//creat add task button
+		let createdbutton2 = document.createElement("button");
+		createdbutton2.setAttribute('type', 'submit');
+        createdbutton2.textContent = 'add';
+		createdbutton2.setAttribute("style","display:inline");
+		createddiv1.appendChild(createdbutton2);
+		
+		//add eventlistener to add task button
+		createdbutton2.addEventListener("click", onnclick);
+		
+		
+		var taskp,donebutton,deletebutton;
+		let count = 0;
+		function createtaskdiv(tasktext){
+			taskp = document.createElement('p');
+            taskp.setAttribute('style', 'border:3px solid green;display:inline; width: 200px; block-size: 25px;');
+			taskp.innerHTML = tasktext;
+		
+			
+			donebutton = document.createElement('button');
+            donebutton.setAttribute('type', 'submit');
+			donebutton.setAttribute("id",`don${count}`);
+            donebutton.textContent = 'done';
+			donebutton.setAttribute("style","display:inline");
+		
+		
+			deletebutton = document.createElement('button');
+            deletebutton.setAttribute('type', 'submit');
+			deletebutton.setAttribute("id",`del${count}`);
+            deletebutton.textContent = 'delete';
+			deletebutton.setAttribute("style","display:inline");
+		
+		
+			return taskp,donebutton,deletebutton;
+		
+		}
+		
+		
+		function onnclick(){
+			var input = document.querySelector("input");
+			var tasktext = input.value;
+			
+			let createddiv2 = document.createElement("div");
+			createddiv2.setAttribute("style","background-color:#F5F5DC;padding:10px;display:flex;justify-content:space-evenly");
+			createddiv2.setAttribute("id",`div${++count}`);
+			document.body.appendChild(createddiv2)
+		
+			
+			taskp,donebutton,deletebutton=createtaskdiv(tasktext);
+			
+			createddiv2.appendChild(taskp);
+			createddiv2.appendChild(donebutton);
+			createddiv2.appendChild(deletebutton);
+			
+			//call the event listener creator function of done/delete buttons
+			dondel(count);
+
+			
+		}
+		
+	
+		function dondel(varr){
+			document.getElementById(`don${varr}`).addEventListener("click", onnclick1.bind(null,varr));
+			document.getElementById(`del${varr}`).addEventListener("click", onnclick2.bind(null,varr));
+		}
+		
+	
+		function onnclick1(i){
+			document.getElementById(`div${i}`).setAttribute("style","background-color:green;padding:10px;display:flex;justify-content:space-evenly");
+		}
+		function onnclick2(i){
+			document.getElementById(`div${i}`).remove();
+		}
+		
+    </script>
+    
+</body>
+</html>
